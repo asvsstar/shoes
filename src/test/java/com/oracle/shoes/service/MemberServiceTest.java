@@ -51,7 +51,20 @@ class MemberServiceTest {
         memberVO2.setUserMail("akrwosla@naver.com");
         memberVO2.setUserPhon("010-1111-0000");
 
+        //
+        memberService.join(memberVO1);
+        assertThrows(IllegalStateException.class,()-> memberService.join(memberVO2));
+
+        /*
+        try {
+            memberService.join(memberVO2);
+            fail();
+        }catch (IllegalStateException e){
+            assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+        }
+        */
     }
+
 
     @Test
     void findMembers() {
