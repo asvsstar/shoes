@@ -13,6 +13,7 @@ package com.oracle.shoes.domain;
 import java.util.Date;
 
 public class MemberVO {
+    private Long userNo;
     private String userId;
     private String userPass;
     private String userName;
@@ -20,6 +21,14 @@ public class MemberVO {
     private String userPhon;
     private String userAddr;
     private Date regiDate;
+
+    public Long getUserNo() {
+        return userNo;
+    }
+
+    public void setUserNo(Long userNo) {
+        this.userNo = userNo;
+    }
 
     public String getUserId() {
         return userId;

@@ -1,12 +1,21 @@
 package com.oracle.shoes.controller;
 
 public class MemberForm {
+    private Long userNo;
     private String userId;
     private String userPass;
     private String userName;
     private String userMail;
     private String userPhon;
     private String userAddr;
+
+    public Long getUserNo() {
+        return userNo;
+    }
+
+    public void setUserNo(Long userNo) {
+        this.userNo = userNo;
+    }
 
     public String getUserPass() {
         return userPass;

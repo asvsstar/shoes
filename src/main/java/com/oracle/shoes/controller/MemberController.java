@@ -4,8 +4,11 @@ import com.oracle.shoes.domain.MemberVO;
 import com.oracle.shoes.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class MemberController {
@@ -29,8 +32,16 @@ public class MemberController {
         memberVO.setUserName(form.getUserName());
         memberVO.setUserPhon(form.getUserPhon());
 
+        System.out.println("memberVO = " + memberVO);
         memberService.join(memberVO);
 
         return "redirect:/";
+    }
+
+    @GetMapping("/members")
+    public String list(Model model){
+        List<MemberVO> members = memberService.findMembers();
+        model.addAttribute("members", members);
+        return "members/memberList";
     }
 }
