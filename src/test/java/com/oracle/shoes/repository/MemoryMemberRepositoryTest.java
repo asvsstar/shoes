@@ -26,7 +26,7 @@ public class MemoryMemberRepositoryTest {
         memberVO.setUserName("민호");
         memberVO.setUserAddr("강남구");
         memberVO.setUserMail("akrwosla@naver.com");
-        memberVO.setUserPhon("010-2829-8698");
+        memberVO.setUserPhon("010-0000-1111");
 
         repository.save((memberVO));
 
@@ -42,7 +42,7 @@ public class MemoryMemberRepositoryTest {
         memberVO1.setUserName("민호");
         memberVO1.setUserAddr("강남구");
         memberVO1.setUserMail("akrwosla@naver.com");
-        memberVO1.setUserPhon("010-2829-8698");
+        memberVO1.setUserPhon("010-0000-1111");
         repository.save((memberVO1));
 
         MemberVO memberVO2 = new MemberVO();
@@ -51,7 +51,7 @@ public class MemoryMemberRepositoryTest {
         memberVO2.setUserName("민호");
         memberVO2.setUserAddr("강남구");
         memberVO2.setUserMail("akrwosla@naver.com");
-        memberVO2.setUserPhon("010-2829-8698");
+        memberVO2.setUserPhon("010-1111-0000");
         repository.save((memberVO2));
 
 
@@ -69,16 +69,16 @@ public class MemoryMemberRepositoryTest {
         memberVO1.setUserName("민호");
         memberVO1.setUserAddr("강남구");
         memberVO1.setUserMail("akrwosla@naver.com");
-        memberVO1.setUserPhon("010-2829-8698");
+        memberVO1.setUserPhon("010-0000-1111");
         repository.save((memberVO1));
 
         MemberVO memberVO2 = new MemberVO();
         memberVO2.setUserId("test2");
         memberVO2.setUserPass("1234");
-        memberVO2.setUserName("민호");
+        memberVO2.setUserName("지선");
         memberVO2.setUserAddr("강남구");
         memberVO2.setUserMail("akrwosla@naver.com");
-        memberVO2.setUserPhon("010-2829-8698");
+        memberVO2.setUserPhon("010-1111-0000");
         repository.save((memberVO2));
 
         List<MemberVO> result = repository.findAll();

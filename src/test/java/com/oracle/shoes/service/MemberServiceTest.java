@@ -22,7 +22,7 @@ class MemberServiceTest {
         memberVO.setUserName("민호");
         memberVO.setUserAddr("강남구");
         memberVO.setUserMail("akrwosla@naver.com");
-        memberVO.setUserPhon("010-2829-8698");
+        memberVO.setUserPhon("010-0000-1111");
 
         String saveId = memberService.join(memberVO);
 
@@ -30,6 +30,26 @@ class MemberServiceTest {
         MemberVO findMember = memberService.findOne(saveId).get();
         assertThat(memberVO.getUserId()).isEqualTo(findMember.getUserId());
 
+
+    }
+
+    @Test
+    public  void 중복_회원_예외(){
+        MemberVO memberVO1 = new MemberVO();
+        memberVO1.setUserId("test1");
+        memberVO1.setUserPass("1234");
+        memberVO1.setUserName("민호");
+        memberVO1.setUserAddr("강남구");
+        memberVO1.setUserMail("akrwosla@naver.com");
+        memberVO1.setUserPhon("010-0000-1111");
+
+        MemberVO memberVO2 = new MemberVO();
+        memberVO2.setUserId("test1");
+        memberVO2.setUserPass("1234");
+        memberVO2.setUserName("지선");
+        memberVO2.setUserAddr("강남구");
+        memberVO2.setUserMail("akrwosla@naver.com");
+        memberVO2.setUserPhon("010-1111-0000");
 
     }
 
