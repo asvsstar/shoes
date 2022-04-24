@@ -1,9 +1,11 @@
 package com.oracle.shoes.repository;
 
 import com.oracle.shoes.domain.MemberVO;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<String, MemberVO> store = new HashMap<>();
